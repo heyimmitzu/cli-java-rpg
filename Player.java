@@ -1,8 +1,7 @@
-public class Player extends Character{
+public class Player extends Character {
     private double mana;
 
-    public Player(String name, PlayerClass className)
-    {
+    public Player(String name, PlayerClass className) {
         this.name = name;
         this.level = 0;
         this.attack = className.getBaseAttack();

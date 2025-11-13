@@ -17,15 +17,14 @@ public enum PlayerClass {
         this.baseMana = baseMana;
     }
 
-    public static PlayerClass fromMenuNumber(int menuNumber){
+    public static PlayerClass fromMenuNumber(int menuNumber) {
         if(menuNumber < 1 || menuNumber > values().length){
             throw new IllegalArgumentException("Invalid menu number: " + menuNumber);
         }
         return values()[menuNumber - 1];
     }
 
-    public static void displayClasses()
-    {
+    public static void displayClasses() {
         System.out.println("Available Classes: ");
         int index = 1;
         for(PlayerClass playerClass : PlayerClass.values())
