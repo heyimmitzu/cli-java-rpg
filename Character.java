@@ -14,6 +14,10 @@ public abstract  class Character {
         health -= damage;
     }
 
+    public void heal(double heal){
+        health += heal;
+    }
+
     public abstract void basicAttack(Character target);
     
 }
