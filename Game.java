@@ -9,7 +9,7 @@ public class Game {
         String name = InputHandler.readStringToUpper("Enter character name: ");
         PlayerClass.displayClasses();
         int classChoice = InputHandler.readIntRange("Chose a class:", 1, PlayerClass.values().length);
-        System.out.print("Welcome, " + name + " the "+ PlayerClass.fromMenuNumber(classChoice) + "!");
+        System.out.println("Welcome, " + name + " the "+ PlayerClass.fromMenuNumber(classChoice) + "!");
         return new Player(name, PlayerClass.fromMenuNumber(classChoice));
     }
 }
