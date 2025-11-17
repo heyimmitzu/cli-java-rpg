@@ -1,6 +1,6 @@
 public abstract  class Character {
     protected double health;
-    protected double attack;
+    protected double baseAttack;
     protected int level;
     protected String name;
     

@@ -8,14 +8,19 @@ public class Game {
         while(running) {
             printMainMenu();
             int choice = InputHandler.readIntRange("What do you want to do?", 1, 4);
-            
+
             switch (choice) {
                 case 1:
                     enterDungeon();
                 break;
                 
                 case 2:
-                    enterTavern();
+                    // Prevents repeated Tavern spam to XP glitch
+                    if(player.getHealth() == player.getBaseHealth()) {
+                        System.out.println("You cannot enter the tavern with full HP!");
+                    } else {
+                        enterTavern();
+                    }
                 break;
                 
                 case 3:
@@ -51,7 +56,11 @@ public class Game {
     }
 
     public void enterTavern() {
-        System.out.println("Tavern");
+        System.out.println("You have entered the tavern and are now fully rested!");
+        System.out.println("XP Gained: +10!");
+        player.addXP(25);
+        player.setHealth(player.getBaseHealth());
+        System.out.println("Health fully restored! HP: " + player.health);
     }
 
     public void openInventory() {
